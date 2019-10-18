@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/gong/Desktop/MyC:C++Code/test/main.c
+stdio.h
+-
+stdlib.h
+-
+sys/malloc.h
+-
+math.h
+-
+
