@@ -6,13 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/gong/Desktop/MyC:C++Code/DataStructureLab01-1/main.c
+D:/MyC++Code/MyC-C-Code/DataStructureLab01-1/main.c
 stdio.h
 -
 stdlib.h
--
-sys/malloc.h
--
-math.h
 -
 

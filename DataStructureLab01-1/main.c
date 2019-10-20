@@ -1,67 +1,67 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/malloc.h>
-#include <math.h>
-#define M 100 //å®šä¹‰æ ˆçš„æœ€å¤§é•¿åº¦
-typedef int datatype; //å®šä¹‰æ•°æ®ç±»å‹
 
-//å®šä¹‰æ ˆç»“æ„
+#define M 100 //¶¨ÒåÕ»µÄ×î´ó³¤¶È
+typedef int datatype; //¶¨ÒåÊı¾İÀàĞÍ
+
+//¶¨ÒåÕ»½á¹¹
 typedef struct {
     datatype data[M];
-    int top;//æ ˆé¡¶æŒ‡é’ˆ
+    int top;//Õ»¶¥Ö¸Õë
 } seqstack;
 
-void InitStack(seqstack *s) {  //åˆå§‹åŒ–é¡ºåºæ ˆ
+void InitStack(seqstack *s) {  //³õÊ¼»¯Ë³ĞòÕ»
     s->top=-1;
 }
-int StackEmpty(seqstack *s) {  //åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºç©º
+int StackEmpty(seqstack *s) {  //ÅĞ¶ÏÕ»ÊÇ·ñÎª¿Õ
     if (s->top>=0) return 1;
     else return 0;
 }
-seqstack *push(seqstack *s,datatype x) { //å…ƒç´ å…¥æ ˆå‡½æ•°
-    if (s->top==M-1) return NULL;//åˆ¤æ–­æ ˆæ»¡
+seqstack *push(seqstack *s,datatype x) { //ÔªËØÈëÕ»º¯Êı
+    if (s->top==M-1) return NULL;//ÅĞ¶ÏÕ»Âú
     else {
         s->top++;
         s->data[s->top]=x;
     }
     return s;
 }
-datatype pop(seqstack *s) { //å…ƒç´ å‡ºæ ˆå‡½æ•°
+datatype pop(seqstack *s) { //ÔªËØ³öÕ»º¯Êı
     datatype x;
     x=s->data[s->top];
     s->top--;
     return x;
 }
 int main() {
-    char IN_Hex[] = {'A','B','C','D','E','F'};//æœ€é«˜æä¾›16è¿›åˆ¶è½¬æ¢
-    int temp; //è¾“å…¥çš„åè¿›åˆ¶æ•´æ•°
-    int int_temp = 0; //è¾“å…¥ç›®æ ‡è¿›åˆ¶
-    seqstack *s; //å®šä¹‰æ ˆ
-    datatype n,e; //å¼¹å‡ºæ ˆé¡¶å…ƒç´ ä¸”èµ‹å€¼ç»™e
+    char IN_Hex[] = {'A','B','C','D','E','F'};//×î¸ßÌá¹©16½øÖÆ×ª»»
+    int temp; //ÊäÈëµÄÊ®½øÖÆÕûÊı
+    int int_temp = 0; //ÊäÈëÄ¿±ê½øÖÆ
+    seqstack *s; //¶¨ÒåÕ»
+    datatype n,e; //µ¯³öÕ»¶¥ÔªËØÇÒ¸³Öµ¸øe
 
-    printf("è¯·è¾“å…¥åè¿›åˆ¶æ•´æ•°\n");
+    printf("ÇëÊäÈëÊ®½øÖÆÕûÊı£º");
     scanf("%d",&n);
     temp = n;
-    n = abs(n);  //nå§‹ç»ˆä¸ºæ­£ï¼Œwhileå¾ªç¯ä½¿ç”¨
-    int i=0,j=0; //iç”¨äºè®¡é‡æ ˆå…ƒç´ ä¸ªæ•°ï¼Œjç”¨äºå‡ºæ ˆå¾ªç¯
+    n = abs(n);  //nÊ¼ÖÕÎªÕı£¬whileÑ­»·Ê¹ÓÃ
+    int i=0,j=0; //iÓÃÓÚ¼ÆÁ¿Õ»ÔªËØ¸öÊı£¬jÓÃÓÚ³öÕ»Ñ­»·
 
-    s = (seqstack*)malloc(sizeof(int)); //å¿…é¡»åˆ†é…ç©ºé—´
-    if (s==NULL) exit(0); //æ£€æŸ¥æ˜¯å¦åˆ†é…æˆåŠŸ
+    s = (seqstack*)malloc(sizeof(int)); //±ØĞë·ÖÅä¿Õ¼ä
+    if (s==NULL) exit(0); //¼ì²éÊÇ·ñ·ÖÅä³É¹¦
 
-    InitStack(s); // åˆå§‹åŒ–æ ˆ
-    printf("è¯·è¾“å…¥æ‚¨æƒ³è½¬æ¢æˆçš„ç›®æ ‡è¿›åˆ¶:\n");
-    scanf("%d",&int_temp);   // è¾“å…¥éè´Ÿåè¿›åˆ¶æ•´æ•°n
-    while(n) { // å½“nä¸ç­‰äº0
-        push(s,n%int_temp); // å…¥æ ˆné™¤ä»¥int_tempçš„ä½™æ•°(int_tempè¿›åˆ¶çš„ä½ä½)
-        i++;         // ç»Ÿè®¡å…¥æ ˆå…ƒç´ ä¸ªæ•°
+    InitStack(s); // ³õÊ¼»¯Õ»
+    printf("ÇëÊäÈëÄúÏë×ª»»³ÉµÄÄ¿±ê½øÖÆ£¨<=16£©£º");
+    scanf("%d",&int_temp);   // ÊäÈë·Ç¸ºÊ®½øÖÆÕûÊın
+    printf("×ª»»½á¹û£º");
+    while(n) { // µ±n²»µÈÓÚ0
+        push(s,n%int_temp); // ÈëÕ»n³ıÒÔint_tempµÄÓàÊı(int_temp½øÖÆµÄµÍÎ»)
+        i++;         // Í³¼ÆÈëÕ»ÔªËØ¸öÊı
         n=n/int_temp;
     }
     if(temp<0){
         printf("-");
     }
-    while(j<i) { // è¾“å‡ºint_tempè¿›åˆ¶
+    while(j<i) { // Êä³öint_temp½øÖÆ
         j++;
-        e=pop(s); // å¼¹å‡ºæ ˆé¡¶å…ƒç´ ä¸”èµ‹å€¼ç»™e
+        e=pop(s); // µ¯³öÕ»¶¥ÔªËØÇÒ¸³Öµ¸øe
         if(e>=10) {
             putchar(IN_Hex[e-10]);
         } else {
