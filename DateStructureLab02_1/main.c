@@ -8,41 +8,41 @@ struct BTreeNode
     struct BTreeNode* right;
 };
 
-//1ã€è¾“å‡ºäºŒå‰æ ‘ï¼Œå¯åœ¨å‰åºéå†çš„åŸºç¡€ä¸Šä¿®æ”¹ã€‚é‡‡ç”¨å¹¿ä¹‰è¡¨æ ¼å¼ï¼Œå…ƒç´ ç±»å‹ä¸ºint
+//1¡¢Êä³ö¶ş²æÊ÷£¬¿ÉÔÚÇ°Ğò±éÀúµÄ»ù´¡ÉÏĞŞ¸Ä¡£²ÉÓÃ¹ãÒå±í¸ñÊ½£¬ÔªËØÀàĞÍÎªint
 void PrintBTree_int(struct BTreeNode* BT)
 {
     if (BT != NULL)
     {
-        printf("%d", BT->data); //è¾“å‡ºæ ¹ç»“ç‚¹çš„å€¼
+        printf("%d", BT->data); //Êä³ö¸ù½áµãµÄÖµ
         if (BT->left != NULL || BT->right != NULL)
         {
             printf("(");
-            PrintBTree_int(BT->left); //è¾“å‡ºå·¦å­æ ‘
+            PrintBTree_int(BT->left); //Êä³ö×ó×ÓÊ÷
             if (BT->right != NULL)
                 printf(",");
-            PrintBTree_int(BT->right); //è¾“å‡ºå³å­æ ‘
+            PrintBTree_int(BT->right); //Êä³öÓÒ×ÓÊ÷
             printf(")");
         }
     }
 }
 
-//2ã€æ ¹æ®æ•°ç»„ a ä¸­ n ä¸ªæƒå€¼å»ºç«‹ä¸€æ£µå“ˆå¤«æ›¼æ ‘ï¼Œè¿”å›æ ‘æ ¹æŒ‡é’ˆ
+//2¡¢¸ù¾İÊı×é a ÖĞ n ¸öÈ¨Öµ½¨Á¢Ò»¿Ã¹ş·òÂüÊ÷£¬·µ»ØÊ÷¸ùÖ¸Õë
 struct BTreeNode* CreateHuffman(ElemType a[], int n)
 {
     int i, j;
     struct BTreeNode **b, *q;
     b = malloc(n*sizeof(struct BTreeNode));
-    for (i = 0; i < n; i++) //åˆå§‹åŒ–bæŒ‡é’ˆæ•°ç»„ï¼Œä½¿æ¯ä¸ªæŒ‡é’ˆå…ƒç´ æŒ‡å‘aæ•°ç»„ä¸­å¯¹åº”çš„å…ƒç´ ç»“ç‚¹
+    for (i = 0; i < n; i++) //³õÊ¼»¯bÖ¸ÕëÊı×é£¬Ê¹Ã¿¸öÖ¸ÕëÔªËØÖ¸ÏòaÊı×éÖĞ¶ÔÓ¦µÄÔªËØ½áµã
     {
         b[i] = malloc(sizeof(struct BTreeNode));
         b[i]->data = a[i];
         b[i]->left = b[i]->right = NULL;
     }
-    for (i = 1; i < n; i++)//è¿›è¡Œ n-1 æ¬¡å¾ªç¯å»ºç«‹å“ˆå¤«æ›¼æ ‘
+    for (i = 1; i < n; i++)//½øĞĞ n-1 ´ÎÑ­»·½¨Á¢¹ş·òÂüÊ÷
     {
-        //k1è¡¨ç¤ºæ£®æ—ä¸­å…·æœ‰æœ€å°æƒå€¼çš„æ ‘æ ¹ç»“ç‚¹çš„ä¸‹æ ‡ï¼Œk2ä¸ºæ¬¡æœ€å°çš„ä¸‹æ ‡
+        //k1±íÊ¾É­ÁÖÖĞ¾ßÓĞ×îĞ¡È¨ÖµµÄÊ÷¸ù½áµãµÄÏÂ±ê£¬k2Îª´Î×îĞ¡µÄÏÂ±ê
         int k1 = -1, k2;
-        for (j = 0; j < n; j++)//è®©k1åˆå§‹æŒ‡å‘æ£®æ—ä¸­ç¬¬ä¸€æ£µæ ‘ï¼Œk2æŒ‡å‘ç¬¬äºŒæ£µ
+        for (j = 0; j < n; j++)//ÈÃk1³õÊ¼Ö¸ÏòÉ­ÁÖÖĞµÚÒ»¿ÃÊ÷£¬k2Ö¸ÏòµÚ¶ş¿Ã
         {
             if (b[j] != NULL && k1 == -1)
             {
@@ -55,7 +55,7 @@ struct BTreeNode* CreateHuffman(ElemType a[], int n)
                 break;
             }
         }
-        for (j = k2; j < n; j++)//ä»å½“å‰æ£®æ—ä¸­æ±‚å‡ºæœ€å°æƒå€¼æ ‘å’Œæ¬¡æœ€å°
+        for (j = k2; j < n; j++)//´Óµ±Ç°É­ÁÖÖĞÇó³ö×îĞ¡È¨ÖµÊ÷ºÍ´Î×îĞ¡
         {
             if (b[j] != NULL)
             {
@@ -68,49 +68,49 @@ struct BTreeNode* CreateHuffman(ElemType a[], int n)
                     k2 = j;
             }
         }
-        //ç”±æœ€å°æƒå€¼æ ‘å’Œæ¬¡æœ€å°æƒå€¼æ ‘å»ºç«‹ä¸€æ£µæ–°æ ‘ï¼ŒqæŒ‡å‘æ ‘æ ¹ç»“ç‚¹
+        //ÓÉ×îĞ¡È¨ÖµÊ÷ºÍ´Î×îĞ¡È¨ÖµÊ÷½¨Á¢Ò»¿ÃĞÂÊ÷£¬qÖ¸ÏòÊ÷¸ù½áµã
         q = malloc(sizeof(struct BTreeNode));
         q->data = b[k1]->data + b[k2]->data;
         q->left = b[k1];
         q->right = b[k2];
 
-        b[k1] = q;//å°†æŒ‡å‘æ–°æ ‘çš„æŒ‡é’ˆèµ‹ç»™bæŒ‡é’ˆæ•°ç»„ä¸­k1ä½ç½®
-        b[k2] = NULL;//k2ä½ç½®ä¸ºç©º
+        b[k1] = q;//½«Ö¸ÏòĞÂÊ÷µÄÖ¸Õë¸³¸øbÖ¸ÕëÊı×éÖĞk1Î»ÖÃ
+        b[k2] = NULL;//k2Î»ÖÃÎª¿Õ
     }
-    free(b); //åˆ é™¤åŠ¨æ€å»ºç«‹çš„æ•°ç»„b
-    return q; //è¿”å›æ•´ä¸ªå“ˆå¤«æ›¼æ ‘çš„æ ‘æ ¹æŒ‡é’ˆ
+    free(b); //É¾³ı¶¯Ì¬½¨Á¢µÄÊı×éb
+    return q; //·µ»ØÕû¸ö¹ş·òÂüÊ÷µÄÊ÷¸ùÖ¸Õë
 }
 
-//3ã€æ±‚å“ˆå¤«æ›¼æ ‘çš„å¸¦æƒè·¯å¾„é•¿åº¦
-ElemType WeightPathLength(struct BTreeNode* FBT, int len)//lenåˆå§‹ä¸º0
+//3¡¢Çó¹ş·òÂüÊ÷µÄ´øÈ¨Â·¾¶³¤¶È
+ElemType WeightPathLength(struct BTreeNode* FBT, int len)//len³õÊ¼Îª0
 {
-    if (FBT == NULL) //ç©ºæ ‘è¿”å›0
+    if (FBT == NULL) //¿ÕÊ÷·µ»Ø0
         return 0;
     else
     {
-        if (FBT->left == NULL && FBT->right == NULL)//è®¿é—®åˆ°å¶å­ç»“ç‚¹
+        if (FBT->left == NULL && FBT->right == NULL)//·ÃÎÊµ½Ò¶×Ó½áµã
             return FBT->data * len;
-        else //è®¿é—®åˆ°éå¶å­ç»“ç‚¹ï¼Œè¿›è¡Œé€’å½’è°ƒç”¨ï¼Œè¿”å›å·¦å³å­æ ‘çš„å¸¦æƒè·¯å¾„é•¿åº¦ä¹‹å’Œï¼Œlené€’å¢
+        else //·ÃÎÊµ½·ÇÒ¶×Ó½áµã£¬½øĞĞµİ¹éµ÷ÓÃ£¬·µ»Ø×óÓÒ×ÓÊ÷µÄ´øÈ¨Â·¾¶³¤¶ÈÖ®ºÍ£¬lenµİÔö
             return WeightPathLength(FBT->left,len+1)+WeightPathLength(FBT->right,len+1);
     }
 }
 
-//4ã€å“ˆå¤«æ›¼ç¼–ç ï¼ˆå¯ä»¥æ ¹æ®å“ˆå¤«æ›¼æ ‘å¸¦æƒè·¯å¾„é•¿åº¦çš„ç®—æ³•åŸºç¡€ä¸Šè¿›è¡Œä¿®æ”¹ï¼‰
-void HuffManCoding(struct BTreeNode* FBT, int len)//lenåˆå§‹å€¼ä¸º0
+//4¡¢¹ş·òÂü±àÂë£¨¿ÉÒÔ¸ù¾İ¹ş·òÂüÊ÷´øÈ¨Â·¾¶³¤¶ÈµÄËã·¨»ù´¡ÉÏ½øĞĞĞŞ¸Ä£©
+void HuffManCoding(struct BTreeNode* FBT, int len)//len³õÊ¼ÖµÎª0
 {
-    static int a[10];//å®šä¹‰é™æ€æ•°ç»„aï¼Œä¿å­˜æ¯ä¸ªå¶å­çš„ç¼–ç ï¼Œæ•°ç»„é•¿åº¦è‡³å°‘æ˜¯æ ‘æ·±åº¦å‡ä¸€
-    if (FBT != NULL)//è®¿é—®åˆ°å¶å­ç»“ç‚¹æ—¶è¾“å‡ºå…¶ä¿å­˜åœ¨æ•°ç»„aä¸­çš„0å’Œ1åºåˆ—ç¼–ç 
+    static int a[10];//¶¨Òå¾²Ì¬Êı×éa£¬±£´æÃ¿¸öÒ¶×ÓµÄ±àÂë£¬Êı×é³¤¶ÈÖÁÉÙÊÇÊ÷Éî¶È¼õÒ»
+    if (FBT != NULL)//·ÃÎÊµ½Ò¶×Ó½áµãÊ±Êä³öÆä±£´æÔÚÊı×éaÖĞµÄ0ºÍ1ĞòÁĞ±àÂë
     {
         if (FBT->left == NULL && FBT->right == NULL)
         {
             int i;
-            printf("ç»“ç‚¹æƒå€¼ä¸º%dçš„ç¼–ç ï¼š", FBT->data);
+            printf("½áµãÈ¨ÖµÎª%dµÄ±àÂë£º", FBT->data);
             for (i = 0; i < len; i++)
                 printf("%d", a[i]);
             printf("\n");
         }
-        else//è®¿é—®åˆ°éå¶å­ç»“ç‚¹æ—¶åˆ†åˆ«å‘å·¦å³å­æ ‘é€’å½’è°ƒç”¨ï¼Œå¹¶æŠŠåˆ†æ”¯ä¸Šçš„0ã€1ç¼–ç ä¿å­˜åˆ°æ•°ç»„a
-        {   //çš„å¯¹åº”å…ƒç´ ä¸­ï¼Œå‘ä¸‹æ·±å…¥ä¸€å±‚æ—¶lenå€¼å¢1
+        else//·ÃÎÊµ½·ÇÒ¶×Ó½áµãÊ±·Ö±ğÏò×óÓÒ×ÓÊ÷µİ¹éµ÷ÓÃ£¬²¢°Ñ·ÖÖ§ÉÏµÄ0¡¢1±àÂë±£´æµ½Êı×éa
+        {   //µÄ¶ÔÓ¦ÔªËØÖĞ£¬ÏòÏÂÉîÈëÒ»²ãÊ±lenÖµÔö1
             a[len] = 0;
             HuffManCoding(FBT->left, len + 1);
             a[len] = 1;
@@ -119,31 +119,31 @@ void HuffManCoding(struct BTreeNode* FBT, int len)//lenåˆå§‹å€¼ä¸º0
     }
 }
 
-//ä¸»å‡½æ•°
+//Ö÷º¯Êı
 void main()
 {
     int n, i;
     ElemType* a;
     struct BTreeNode* fbt;
-    printf("ä»é”®ç›˜è¾“å…¥å¾…æ„é€ çš„å“ˆå¤«æ›¼æ ‘ä¸­å¸¦æƒå¶å­ç»“ç‚¹æ•°nï¼š");
+    printf("´Ó¼üÅÌÊäÈë´ı¹¹ÔìµÄ¹ş·òÂüÊ÷ÖĞ´øÈ¨Ò¶×Ó½áµãÊın£º");
     while(1)
     {
         scanf("%d", &n);
         if (n > 1)
             break;
         else
-            printf("é‡è¾“nå€¼ï¼š");
+            printf("ÖØÊänÖµ£º");
     }
     a = malloc(n*sizeof(ElemType));
-    printf("ä»é”®ç›˜è¾“å…¥%dä¸ªæ•´æ•°ä½œä¸ºæƒå€¼ï¼š", n);
+    printf("´Ó¼üÅÌÊäÈë%d¸öÕûÊı×÷ÎªÈ¨Öµ£º", n);
     for (i = 0; i < n; i++)
         scanf(" %d", &a[i]);
     fbt = CreateHuffman(a, n);
-    printf("å¹¿ä¹‰è¡¨å½¢å¼çš„å“ˆå¤«æ›¼æ ‘ï¼š");
+    printf("¹ãÒå±íĞÎÊ½µÄ¹ş·òÂüÊ÷£º");
     PrintBTree_int(fbt);
     printf("\n");
-    printf("å“ˆå¤«æ›¼æ ‘çš„å¸¦æƒè·¯å¾„é•¿åº¦ï¼š");
+    printf("¹ş·òÂüÊ÷µÄ´øÈ¨Â·¾¶³¤¶È£º");
     printf("%d\n", WeightPathLength(fbt, 0));
-    printf("æ ‘ä¸­æ¯ä¸ªå¶å­ç»“ç‚¹çš„å“ˆå¤«æ›¼ç¼–ç ï¼š\n");
+    printf("Ê÷ÖĞÃ¿¸öÒ¶×Ó½áµãµÄ¹ş·òÂü±àÂë£º\n");
     HuffManCoding(fbt, 0);
 }
