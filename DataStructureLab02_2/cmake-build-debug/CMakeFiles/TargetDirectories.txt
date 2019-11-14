@@ -1,3 +1,0 @@
-/Users/gong/Desktop/MyC:C++Code/MyC-C-Code/DataStructureLab02_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/gong/Desktop/MyC:C++Code/MyC-C-Code/DataStructureLab02_2/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/gong/Desktop/MyC:C++Code/MyC-C-Code/DataStructureLab02_2/cmake-build-debug/CMakeFiles/DataStructureLab02_2.dir
