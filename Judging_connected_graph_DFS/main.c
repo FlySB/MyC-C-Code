@@ -55,7 +55,7 @@ void CreateUDG(ALGraph *G){
 }
 
 //DFS±éÀú
-int JudgeCG(ALGraph *G, int vist[], int v){
+void JudgeCG(ALGraph *G, int vist[], int v){
     vist[v] = 1;
     ArcNode *p;
     p = G->Vex[v].firstarc;
