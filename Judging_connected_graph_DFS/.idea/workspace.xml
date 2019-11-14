@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="DataStructureLab02_02" targetName="DataStructureLab02_02" />
+      <config projectName="Judging_connected_graph_DFS" targetName="Judging_connected_graph_DFS" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -11,7 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c61fa8a4-d4eb-47e7-b050-3a2a3383ba95" name="Default Changelist" comment="" />
+    <list default="true" id="e6be559b-3c8c-46a3-ba1a-30e68505f71d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +22,10 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
-  <component name="ProjectId" id="1TaWoE9wFLgTuKgZnTTTUkwOr1f" />
+  <component name="ProjectId" id="1Taaq53vd8qrDM8lTysQ57sBPYm" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -40,7 +40,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="DataStructureLab02_02" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DataStructureLab02_02" TARGET_NAME="DataStructureLab02_02" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DataStructureLab02_02" RUN_TARGET_NAME="DataStructureLab02_02">
+    <configuration name="Judging_connected_graph_DFS" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Judging_connected_graph_DFS" TARGET_NAME="Judging_connected_graph_DFS" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Judging_connected_graph_DFS" RUN_TARGET_NAME="Judging_connected_graph_DFS">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
