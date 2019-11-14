@@ -4,42 +4,60 @@
 #define SIZE 100
 #define INF 999999999
 
-int m[SIZE];		//´æ·Å¾ØÕóÁ´µÄĞĞÁĞĞÅÏ¢£¬m[i-1]ºÍm[i]·Ö±ğÎªµÚi¸ö¾ØÕóµÄĞĞºÍÁĞ£¨i = 1¡¢2¡¢3...£©
-int d[SIZE][SIZE];	//´æ·Å¾ØÕóÁ´¼ÆËãµÄ×îÓÅÖµ£¬d[i][j]ÎªµÚi¸ö¾ØÕóµ½µÚj¸ö¾ØÕóµÄ¾ØÕóÁ´µÄ×îÓÅÖµ£¬i > 0
+int m[SIZE];		//å­˜æ”¾çŸ©é˜µé“¾çš„è¡Œåˆ—ä¿¡æ¯ï¼Œm[i-1]å’Œm[i]åˆ†åˆ«ä¸ºç¬¬iä¸ªçŸ©é˜µçš„è¡Œå’Œåˆ—ï¼ˆi = 1ã€2ã€3...ï¼‰
+int d[SIZE][SIZE];	//å­˜æ”¾çŸ©é˜µé“¾è®¡ç®—çš„æœ€ä¼˜å€¼ï¼Œd[i][j]ä¸ºç¬¬iä¸ªçŸ©é˜µåˆ°ç¬¬jä¸ªçŸ©é˜µçš„çŸ©é˜µé“¾çš„æœ€ä¼˜å€¼ï¼Œi > 0
+int s[SIZE][SIZE];
 
 int Best_DP(int n)
 {
-    //°Ñd[i][i]ÖÃÎª0£¬1 <= i < n
+    //æŠŠd[i][i]ç½®ä¸º0ï¼Œ1 <= i < n
     memset(d, 0, sizeof(d));
 
     int len;
-    //µİ¹é¼ÆËã¾ØÕóÁ´µÄÁ¬³Ë×îÓÅÖµ
-    //len = 1£¬´ú±í¾ØÕóÁ´ÓÉÁ½¸ö¾ØÕó¹¹³É
+    //é€’å½’è®¡ç®—çŸ©é˜µé“¾çš„è¿ä¹˜æœ€ä¼˜å€¼
+    //len = 1ï¼Œä»£è¡¨çŸ©é˜µé“¾ç”±ä¸¤ä¸ªçŸ©é˜µæ„æˆ
     for (len = 1; len < n; len++)
     {
         int i, j, k;
         for (i = 1, j = i+len; j < n; i++, j++)
         {
-            int min = INF; //ÎŞÇî´ó
+            s[i][j] = i;
+            int min = INF;
             for (k = i; k < j; k++)
             {
-                printf("i:%d j:%d k:%d\n",i,j,k);
                 int count = d[i][k] + d[k+1][j] + m[i-1] * m[k] * m[j];
-                printf("c:%d\n",count);
                 if (count < min)
                 {
+                    s[i][j] = k;
                     min = count;
-                    printf("m:%d\n",min);
                 }
             }
-            printf("k:%d\n",k);
-            printf("i:%d j:%d\n",i,j);
             d[i][j] = min;
-            printf("hhhh\n");
         }
-        printf("pppp\n");
     }
     return d[1][n-1];
+}
+
+void MatOut(int size,int n[SIZE][SIZE]){
+
+    for(int i = 1; i < size; i++){
+        for(int j = 1; j < size; j++){
+        printf("%d\t",n[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void FormatOut(int i, int j){
+    if(i == j){
+        printf("A%d", i);
+        return;
+    }
+    printf("(");
+    FormatOut(i,s[i][j]);
+    printf(" x ");
+    FormatOut(s[i][j] + 1, j);
+    printf(")");
 }
 
 int main()
@@ -47,7 +65,7 @@ int main()
     int n;
 
     while (1) {
-        printf("ÇëÊäÈëÊı×é³¤¶È:");
+        printf("è¯·è¾“å…¥æ•°ç»„é•¿åº¦:");
         scanf("%d",&n);
         if (n >= 1) {
             int i;
@@ -55,11 +73,14 @@ int main()
                 scanf("%d", &m[i]);
             }
 
-            printf("×îÉÙ³Ë·¨´ÎÊıÎª£º%d\n", Best_DP(n));
+            printf("æœ€å°‘ä¹˜æ³•æ¬¡æ•°ä¸ºï¼š%d\n", Best_DP(n));
             break;
         } else{
-            printf("ÇëÊäÈë´óÓÚ0µÄÕûÊı\n");
+            printf("è¯·è¾“å…¥å¤§äº0çš„æ•´æ•°\n");
         }
     }
+    MatOut(n,d);
+    MatOut(n,s);
+    FormatOut(1,n-1);
     return 0;
 }

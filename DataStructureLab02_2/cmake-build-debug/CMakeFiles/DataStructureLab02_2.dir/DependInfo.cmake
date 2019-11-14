@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "D:/MyC++Code/MyC-C-Code/DataStructureLab02_2/main.c" "D:/MyC++Code/MyC-C-Code/DataStructureLab02_2/cmake-build-debug/CMakeFiles/DataStructureLab02_2.dir/main.c.obj"
+  "/Users/gong/Desktop/MyC:C++Code/MyC-C-Code/DataStructureLab02_2/main.c" "/Users/gong/Desktop/MyC:C++Code/MyC-C-Code/DataStructureLab02_2/cmake-build-debug/CMakeFiles/DataStructureLab02_2.dir/main.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

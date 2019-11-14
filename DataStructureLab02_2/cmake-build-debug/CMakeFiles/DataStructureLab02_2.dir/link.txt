@@ -1,3 +1,1 @@
-"D:\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\DataStructureLab02_2.dir/objects.a
-D:\mingw64\bin\ar.exe cr CMakeFiles\DataStructureLab02_2.dir/objects.a @CMakeFiles\DataStructureLab02_2.dir\objects1.rsp
-D:\mingw64\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\DataStructureLab02_2.dir/objects.a -Wl,--no-whole-archive  -o DataStructureLab02_2.exe -Wl,--out-implib,libDataStructureLab02_2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\DataStructureLab02_2.dir\linklibs.rsp
+/Library/Developer/CommandLineTools/usr/bin/cc -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/DataStructureLab02_2.dir/main.c.o  -o DataStructureLab02_2 

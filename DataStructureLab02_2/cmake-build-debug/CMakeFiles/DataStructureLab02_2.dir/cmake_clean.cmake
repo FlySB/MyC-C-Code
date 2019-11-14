@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/DataStructureLab02_2.dir/main.c.obj"
-  "DataStructureLab02_2.exe"
-  "DataStructureLab02_2.exe.manifest"
+  "CMakeFiles/DataStructureLab02_2.dir/main.c.o"
+  "DataStructureLab02_2"
   "DataStructureLab02_2.pdb"
-  "libDataStructureLab02_2.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
