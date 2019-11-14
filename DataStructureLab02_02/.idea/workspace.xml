@@ -11,7 +11,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c61fa8a4-d4eb-47e7-b050-3a2a3383ba95" name="Default Changelist" comment="" />
+    <list default="true" id="c61fa8a4-d4eb-47e7-b050-3a2a3383ba95" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Judging_connected_graph_DFS/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Judging_connected_graph_DFS/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Judging_connected_graph_DFS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Judging_connected_graph_DFS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Judging_connected_graph_DFS/cmake-build-debug/CMakeFiles/Judging_connected_graph_DFS.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Judging_connected_graph_DFS/cmake-build-debug/CMakeFiles/Judging_connected_graph_DFS.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Judging_connected_graph_DFS/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../Judging_connected_graph_DFS/main.c" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +29,11 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1TaWoE9wFLgTuKgZnTTTUkwOr1f" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
@@ -45,5 +56,29 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c61fa8a4-d4eb-47e7-b050-3a2a3383ba95" name="Default Changelist" comment="" />
+      <created>1573719031476</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573719031476</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
