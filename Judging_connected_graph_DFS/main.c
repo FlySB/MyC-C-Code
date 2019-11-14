@@ -6,22 +6,26 @@
 typedef int ArcInfo;
 typedef int VexType;
 
+//边结点
 typedef struct ArcNode{
     int Vex;
     struct ArcNode *nextArc;
     //ArcInfo info;
 }ArcNode;
 
+//顶点
 typedef struct VexNode{
     VexType data;
     ArcNode *firstarc;
 }VexNode;
 
+//邻接表
 typedef struct{
     VexNode Vex[MaxVnum];
     int Vexnum, Arcnum;
 }ALGraph;
 
+//建表
 void CreateUDG(ALGraph *G){
     printf("请输入顶点个数：");
     scanf("%d", &G->Vexnum);
@@ -50,6 +54,7 @@ void CreateUDG(ALGraph *G){
 
 }
 
+//DFS遍历
 int JudgeCG(ALGraph *G, int vist[], int v){
     vist[v] = 1;
     ArcNode *p;
@@ -61,6 +66,7 @@ int JudgeCG(ALGraph *G, int vist[], int v){
     }
 }
 
+//邻接表输出
 void OutUDG(ALGraph *G){
     ArcNode* p;
     for(int i = 1; i <= G->Vexnum; i++){
@@ -74,6 +80,7 @@ void OutUDG(ALGraph *G){
     }
 }
 
+//通过DFS遍历节点标注vist判断无向图是否连通
 void Judge(ALGraph *G, int vist[]){
     for(int i=1; i <= G->Vexnum; i++){
         if(vist[i] == 0){
